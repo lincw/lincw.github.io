@@ -1,1 +1,0 @@
-# lincw.github.io

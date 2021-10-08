@@ -20,15 +20,17 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('ORCID', 'https://orcid.org/my-orcid?orcid=0000-0002-2509-0562'),
+          ('ResearchGate', 'https://www.researchgate.net/profile/Chung-Wen-Lin-2'),)
 
 DEFAULT_PAGINATION = 10
+DEFAULT_DATE = (2021, 10, 1, 13, 1, 1)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+# code blocks with line numbers
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}

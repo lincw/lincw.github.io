@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>生物資料分析Bioinformatics</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2021-08-10T00:00:00+02:00</updated><entry><title>First Post through Pelican</title><link href="/first-post-through-pelican.html" rel="alternate"></link><published>2021-08-10T00:00:00+02:00</published><updated>2021-08-10T00:00:00+02:00</updated><author><name>Lin Chung-wen</name></author><id>tag:None,2021-08-10:/first-post-through-pelican.html</id><summary type="html">&lt;h1&gt;As a new father&lt;/h1&gt;
+&lt;p&gt;從前到現在試過不少部落格，亦利用 WordPress 在自己的主機或者 DigitalOcean 雲端空間架網站。一切都不錯，但很大一個麻煩是資 …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;As a new father&lt;/h1&gt;
+&lt;p&gt;從前到現在試過不少部落格，亦利用 WordPress 在自己的主機或者 DigitalOcean 雲端空間架網站。一切都不錯，但很大一個麻煩是資料都存放在資料庫 SQL 中，不如純文字檔般容易保存或者移動，所以都是斷斷續續的。&lt;/p&gt;
+&lt;p&gt;現在漸漸習慣 Markdown，許多資料亦採用此格式來儲存，因此利用 GitHub 提供的免費空間來重新整立，並建立自己的文庫。&lt;/p&gt;</content><category term="misc"></category></entry></feed>
