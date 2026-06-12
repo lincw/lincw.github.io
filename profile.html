@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chung-Wen Lin - Profile & CV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h1>Chung-Wen Lin</h1>
+            <h2>Postdoctoral Researcher</h2>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">Projects & Products</a>
+                <a href="profile.html" class="nav-link" style="color: var(--accent-color); background-color: rgba(210, 100, 40, 0.05);">Profile & CV</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="profile">
+                <h2 class="section-title">Professional Profile</h2>
+                <p class="profile-text">
+                    Microbiome and bioinformatics scientist with a product mindset, specializing in multi-omics integration for molecular signal identification, and building reproducible computational pipelines for target discovery. Extended into applied LLM research: built an autonomous literature mining system and a reasoning framework estimating tissue-specific PPI likelihood from RNA, IHC, mass-spectrometry, and subcellular-localization data. Proficient in Python, R, NGS data analysis, Git, HPC/SLURM, and collaborating with multidisciplinary teams to translate complex data into biological tools and insights.
+                </p>
+            </section>
+
+            <section id="experience">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Postdoctoral researcher</h3>
+                    <p class="timeline-subtitle">Institute of Network Biology, Helmholtz Munich, Germany | Jan 2018 &ndash; present (parental leave: May 2022 &ndash; Feb 2023 and Nov 2024 &ndash; Aug 2025)</p>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Developed and implemented automated computational pipelines for the analysis of high-throughput SARS-CoV-2-human protein interaction networks, enabling a proteome-scale map (co-first author, <i>Nature Biotechnology</i> 2022) for viral target prioritisation.</li>
+                            <li>Developed new computational approaches to integrate multi-omics datasets, connecting molecular signals to clinical phenotypes in asthma-relevant immune mechanisms.</li>
+                            <li>Prototyped and implemented reproducible data processing tools and workflows, turning complex ideas into robust code across heterogeneous omics sources.</li>
+                            <li>Collaborated closely with multidisciplinary teams, leading scientific questions forward to address data quality concerns, and presented analytical findings at internal and external meetings.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Tissue-specific PPI Estimation via LLM Reasoning</h3>
+                    <p class="timeline-subtitle">Ongoing Project</p>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Developed an LLM reasoning framework that estimates the tissue-specific likelihood of protein-protein interactions by prompting models (Claude, GPT-5, gpt-oss, Gemma) to jointly reason over RNA expression, IHC protein abundance, mass-spectrometry data, and subcellular localization.</li>
+                            <li>Built an autonomous literature mining system spanning PubMed abstract retrieval, gene mention filtering, PMC full-text download, and open-ended LLM extraction of experimentally validated PPIs with tissue context.</li>
+                            <li>Engineered a provider-agnostic API abstraction supporting Claude, OpenAI, and Ollama backends with structured JSON output, self-confidence scoring, and resumable HPC/SLURM batch execution.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Visiting scholar</h3>
+                    <p class="timeline-subtitle">National Institute for Basic Biology, Japan | May 2016 &ndash; Jun 2016</p>
+                    <div class="timeline-desc">
+                        Gene co-expression network clustering (WGCNA) to identify functional gene modules.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Research and development engineer</h3>
+                    <p class="timeline-subtitle">ProMD Biotech Co., Ltd., Taiwan | Jul 2010 &ndash; Jun 2012</p>
+                    <div class="timeline-desc">
+                        Probiotics identification, functional assays, and validation of new probiotic formulations for commercial health products.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Research assistant</h3>
+                    <p class="timeline-subtitle">Academia Sinica, Taiwan | Aug 2007 &ndash; Feb 2010</p>
+                    <div class="timeline-desc">
+                        Investigated nutrient deficiency effects in <i>Arabidopsis</i> and cucumber via microarray; identified impacted genetic pathways.
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Ph.D., Life Sciences</h3>
+                    <p class="timeline-subtitle">National Cheng Kung University, Taiwan | Jul 2012 &ndash; Sep 2017</p>
+                    <div class="timeline-desc">
+                        Thesis: "Transcriptome analysis provide insights into environmental stresses in plants"
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="timeline-title">M.S., Life Sciences</h3>
+                    <p class="timeline-subtitle">National Cheng Kung University, Taiwan | Sep 2003 &ndash; Jun 2005</p>
+                    <div class="timeline-desc">
+                        Thesis: "The effect of vanadate and zinc on rice root cell signal transduction"
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2 class="section-title">Skills</h2>
+                <ul class="skills-list">
+                    <li>
+                        <span class="skill-category">Microbiome &amp; Bioinformatics:</span>
+                        <span class="skill-items">Microbiome profiling, multi-omics data integration, linking omics to clinical outcomes, NGS data analysis, target discovery, proteomics</span>
+                    </li>
+                    <li>
+                        <span class="skill-category">Programming &amp; Tools:</span>
+                        <span class="skill-items">Python, R, method prototyping, building analytical tools, Perl, SQL, Git, Bash</span>
+                    </li>
+                    <li>
+                        <span class="skill-category">AI/LLM Engineering:</span>
+                        <span class="skill-items">Structured prompt engineering, multi-provider API integration, tissue-specific PPI reasoning with multi-modal evidence, resumable HPC/SLURM batch pipelines</span>
+                    </li>
+                    <li>
+                        <span class="skill-category">Data Engineering &amp; Pipelines:</span>
+                        <span class="skill-items">Automated QC pipelines, reproducible data analysis workflows, large-scale data curation, SQLite</span>
+                    </li>
+                    <li>
+                        <span class="skill-category">Environments:</span>
+                        <span class="skill-items">HPC/SLURM, Docker, high-performance computing, cloud-aware workflows</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2 class="section-title">Selected Publications</h2>
+                <ol class="pub-list">
+                    <li>Young V., Dohai B., ..., <b>Lin C.W.</b>, et al. Effector&ndash;host interactome map links type III secretion systems in healthy gut microbiomes to immune modulation. <span class="pub-journal">Nature Microbiology</span>. 2026 Jan.</li>
+                    <li>Kim D.K., Weller B., <b>Lin C.W.</b>, Sheykhkarimli D., Knapp J.J., et al. A proteome-scale map of the SARS-CoV-2-human contactome. <span class="pub-journal">Nature Biotechnology</span>. (co-first author). 2022.</li>
+                    <li>de la Rosa NM, <b>Lin C-W</b>, Kang YJ, Dhondt S, Gonzalez N, Inz&eacute; D, et al. Drought resistance is mediated by divergent strategies in closely related Brassicaceae. <span class="pub-journal">New Phytologist</span>. 2019 Jul;223(2):783&ndash;97. (co-first author)</li>
+                    <li>Dragunas G., Klotz M., Chen S., ..., <b>Lin C.W.</b>, et al. A beneficial environment promotes immune resilience through epigenetic regulation. <span class="pub-journal">Science Advances</span>, 2026 Jan.</li>
+                    <li>Weller B., <b>Lin C.W.</b>, Pogoutse O., Sauer M., de la Rosa N., Strobel A., et al. A resource of human coronavirus protein-coding sequences in a flexible, multipurpose Gateway Entry clone collection. <span class="pub-journal">G3</span>. 2023 Jun.</li>
+                    <li><b>Lin C-W</b>, Fu S-F, Liu Y-J, Chen C-C, Chang C-H, Yang Y-W, et al. Analysis of ambient temperature-responsive transcriptome in shoot apical meristem of heat-tolerant and heat-sensitive broccoli inbred lines during floral head formation. <span class="pub-journal">BMC plant biology</span>. 2019 Dec;19(1):3.</li>
+                    <li><b>Lin C-W</b>, Huang L-Y, Huang C-L, Wang Y-C, Lai P-H, Wang H-V, et al. Common Stress Transcriptome Analysis Reveals Functional and Genomic Architecture Differences Between Early and Delayed Response Genes. <span class="pub-journal">Plant and Cell Physiology</span>. 2017 Mar;58(3):546&ndash;59. (co-first author)</li>
+                </ol>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
