@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chung-Wen Lin - Profile & CV</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js"></script>
 </head>
 <body>
     <div class="layout-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar">
             <h1>Chung-Wen Lin</h1>
-            <h2>Postdoctoral Researcher</h2>
-            
+            <h2>Bioinformatics</h2>
+
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">
+                <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM3 11h2a1 1 0 110 2H3a1 1 0 110-2zm16 0h2a1 1 0 110 2h-2a1 1 0 110-2zM5.64 4.22l1.42 1.42A1 1 0 115.64 7.05L4.22 5.64a1 1 0 111.42-1.42zm12.02 12.02l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42zM18.36 4.22a1 1 0 111.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42l1.42-1.42zM6.22 16.24l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42z"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+
             <nav class="sidebar-nav">
                 <a href="index.html" class="nav-link">Projects & Products</a>
                 <a href="profile.html" class="nav-link" style="color: var(--accent-color); background-color: rgba(210, 100, 40, 0.05);">Profile & CV</a>
+                <a href="publications.html" class="nav-link">Publications</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </aside>
@@ -25,7 +32,7 @@
             <section id="profile">
                 <h2 class="section-title">Professional Profile</h2>
                 <p class="profile-text">
-                    Microbiome and bioinformatics scientist with a product mindset, specializing in multi-omics integration for molecular signal identification, and building reproducible computational pipelines for target discovery. Extended into applied LLM research: built an autonomous literature mining system and a reasoning framework estimating tissue-specific PPI likelihood from RNA, IHC, mass-spectrometry, and subcellular-localization data. Proficient in Python, R, NGS data analysis, Git, HPC/SLURM, and collaborating with multidisciplinary teams to translate complex data into biological tools and insights.
+                    Bioinformatics scientist with a product mindset, turning complex high-throughput omics datasets into biologically meaningful insights across viral infectious diseases, immune diseases, and plant stress biology. Specializing in multi-omics integration for molecular signal identification, and building reproducible computational pipelines for target discovery. Extended into applied LLM research: built an autonomous literature mining system and a reasoning framework estimating tissue-specific PPI likelihood from RNA, IHC, mass-spectrometry, and subcellular-localization data. Proficient in Python, R, NGS data analysis, Git, HPC/SLURM, and collaborating with multidisciplinary teams to translate complex data into biological tools and insights.
                 </p>
             </section>
 
@@ -106,8 +113,8 @@
                 <h2 class="section-title">Skills</h2>
                 <ul class="skills-list">
                     <li>
-                        <span class="skill-category">Microbiome &amp; Bioinformatics:</span>
-                        <span class="skill-items">Microbiome profiling, multi-omics data integration, linking omics to clinical outcomes, NGS data analysis, target discovery, proteomics</span>
+                        <span class="skill-category">Bioinformatics:</span>
+                        <span class="skill-items">Multi-omics data integration, linking omics to clinical outcomes, NGS data analysis, target discovery, proteomics, microbiome profiling</span>
                     </li>
                     <li>
                         <span class="skill-category">Programming &amp; Tools:</span>
@@ -119,7 +126,7 @@
                     </li>
                     <li>
                         <span class="skill-category">Data Engineering &amp; Pipelines:</span>
-                        <span class="skill-items">Automated QC pipelines, reproducible data analysis workflows, large-scale data curation, SQLite</span>
+                        <span class="skill-items">Automated QC pipelines, reproducible data analysis workflows (Nextflow), large-scale data curation, SQLite</span>
                     </li>
                     <li>
                         <span class="skill-category">Environments:</span>
@@ -128,18 +135,6 @@
                 </ul>
             </section>
 
-            <section id="publications">
-                <h2 class="section-title">Selected Publications</h2>
-                <ol class="pub-list">
-                    <li>Young V., Dohai B., ..., <b>Lin C.W.</b>, et al. Effector&ndash;host interactome map links type III secretion systems in healthy gut microbiomes to immune modulation. <span class="pub-journal">Nature Microbiology</span>. 2026 Jan.</li>
-                    <li>Kim D.K., Weller B., <b>Lin C.W.</b>, Sheykhkarimli D., Knapp J.J., et al. A proteome-scale map of the SARS-CoV-2-human contactome. <span class="pub-journal">Nature Biotechnology</span>. (co-first author). 2022.</li>
-                    <li>de la Rosa NM, <b>Lin C-W</b>, Kang YJ, Dhondt S, Gonzalez N, Inz&eacute; D, et al. Drought resistance is mediated by divergent strategies in closely related Brassicaceae. <span class="pub-journal">New Phytologist</span>. 2019 Jul;223(2):783&ndash;97. (co-first author)</li>
-                    <li>Dragunas G., Klotz M., Chen S., ..., <b>Lin C.W.</b>, et al. A beneficial environment promotes immune resilience through epigenetic regulation. <span class="pub-journal">Science Advances</span>, 2026 Jan.</li>
-                    <li>Weller B., <b>Lin C.W.</b>, Pogoutse O., Sauer M., de la Rosa N., Strobel A., et al. A resource of human coronavirus protein-coding sequences in a flexible, multipurpose Gateway Entry clone collection. <span class="pub-journal">G3</span>. 2023 Jun.</li>
-                    <li><b>Lin C-W</b>, Fu S-F, Liu Y-J, Chen C-C, Chang C-H, Yang Y-W, et al. Analysis of ambient temperature-responsive transcriptome in shoot apical meristem of heat-tolerant and heat-sensitive broccoli inbred lines during floral head formation. <span class="pub-journal">BMC plant biology</span>. 2019 Dec;19(1):3.</li>
-                    <li><b>Lin C-W</b>, Huang L-Y, Huang C-L, Wang Y-C, Lai P-H, Wang H-V, et al. Common Stress Transcriptome Analysis Reveals Functional and Genomic Architecture Differences Between Early and Delayed Response Genes. <span class="pub-journal">Plant and Cell Physiology</span>. 2017 Mar;58(3):546&ndash;59. (co-first author)</li>
-                </ol>
-            </section>
         </main>
     </div>
 </body>
