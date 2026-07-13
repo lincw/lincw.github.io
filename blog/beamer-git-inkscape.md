@@ -198,6 +198,7 @@ tag 應指向同時包含投影片來源與該次封存 PDF 的 commit。這樣 
 ## 有工具能把視覺化畫布完整轉成 TikZ 嗎？
 最接近的是 Inkscape 搭配 `svg2tikz`。可在 Inkscape 中以拖拉方式設計整頁 SVG，再輸出 TikZ 程式碼並以 `\input{...}` 納入 Beamer。
 
+{% raw %}
 ```latex
 \begin{frame}[plain]
   \centering
@@ -206,6 +207,7 @@ tag 應指向同時包含投影片來源與該次封存 PDF 的 commit。這樣 
   }
 \end{frame}
 ```
+{% endraw %}
 
 但這不應視為通用投影片製作方案。
 SVG-to-TikZ 對基本向量路徑、線條、填色與簡單形狀可行；對文字字距、折行、遮罩、漸層、濾鏡、複雜裁切與嵌入影像，結果不一定與 Inkscape 原稿完全一致。
