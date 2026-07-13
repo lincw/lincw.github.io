@@ -1,0 +1,5 @@
+defaults:
+  - scope:
+      path: "blog"
+    values:
+      layout: "blog_post"

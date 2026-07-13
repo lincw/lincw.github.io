@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "Blog Post" }} - Chung-Wen Lin</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+    <script src="{{ site.baseurl }}/theme.js"></script>
+    <style>
+        .blog-post-content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+        .blog-post-content h1 { font-size: 2rem; margin-bottom: 1rem; }
+        .blog-post-content h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        .blog-post-content h3 { font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .blog-post-content p { margin-bottom: 1.25rem; }
+        .blog-post-content ul, .blog-post-content ol { margin-bottom: 1.25rem; padding-left: 2rem; }
+        .blog-post-content li { margin-bottom: 0.5rem; }
+        .blog-post-content pre { background: var(--surface-color); border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1.25rem; }
+        .blog-post-content code { font-family: monospace; background: rgba(0,0,0,0.05); padding: 0.2em 0.4em; border-radius: 3px; font-size: 0.9em; }
+        :root[data-theme="dark"] .blog-post-content code { background: rgba(255,255,255,0.1); }
+        .blog-post-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; }
+        .post-meta { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+    <div class="layout-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h1>Chung-Wen Lin</h1>
+            <h2>Bioinformatics</h2>
+
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">
+                <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM3 11h2a1 1 0 110 2H3a1 1 0 110-2zm16 0h2a1 1 0 110 2h-2a1 1 0 110-2zM5.64 4.22l1.42 1.42A1 1 0 115.64 7.05L4.22 5.64a1 1 0 111.42-1.42zm12.02 12.02l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42zM18.36 4.22a1 1 0 111.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42l1.42-1.42zM6.22 16.24l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42z"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+
+            <nav class="sidebar-nav">
+                <a href="{{ site.baseurl }}/index.html" class="nav-link">Projects & Products</a>
+                <a href="{{ site.baseurl }}/profile.html" class="nav-link">Profile & CV</a>
+                <a href="{{ site.baseurl }}/publications.html" class="nav-link">Publications</a>
+                <a href="{{ site.baseurl }}/blog.html" class="nav-link" style="color: var(--accent-color); background-color: rgba(210, 100, 40, 0.05);">Blog</a>
+                <a href="{{ site.baseurl }}/contact.html" class="nav-link">Contact</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <article class="blog-post-content">
+                {% if page.date_created or page.tags %}
+                <div class="post-meta">
+                    {% if page.date_created %}<strong>Created:</strong> {{ page.date_created }}<br>{% endif %}
+                    {% if page.tags %}<strong>Tags:</strong> {{ page.tags }}{% endif %}
+                </div>
+                {% endif %}
+                {{ content }}
+            </article>
+        </main>
+    </div>
+</body>
+</html>
