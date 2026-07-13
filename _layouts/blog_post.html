@@ -59,7 +59,13 @@
                 {% if page.date_created or page.tags or page.category %}
                 <div class="post-meta">
                     {% if page.date_created %}<strong>Created:</strong> {{ page.date_created | slice: 0, 10 }}<br>{% endif %}
-                    {% if page.category %}<strong>Category:</strong> {{ page.category }}<br>{% endif %}
+                    {% if page.category %}
+                        {% if page.category.first %}
+                            <strong>Categories:</strong> {{ page.category | join: ", " }}<br>
+                        {% else %}
+                            <strong>Category:</strong> {{ page.category }}<br>
+                        {% endif %}
+                    {% endif %}
                     {% if page.tags %}<strong>Tags:</strong> {{ page.tags }}{% endif %}
                 </div>
                 {% endif %}

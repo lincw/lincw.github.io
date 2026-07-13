@@ -68,7 +68,13 @@ permalink: /blog.html
                     {% assign raw_categories = "" %}
                     {% for post in site.pages %}
                         {% if post.path contains 'blog/' and post.category %}
-                            {% assign raw_categories = raw_categories | append: post.category | append: "|" %}
+                            {% if post.category.first %}
+                                {% for c in post.category %}
+                                    {% assign raw_categories = raw_categories | append: c | append: "|" %}
+                                {% endfor %}
+                            {% else %}
+                                {% assign raw_categories = raw_categories | append: post.category | append: "|" %}
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                     {% assign categories = raw_categories | split: "|" | compact | uniq | sort %}
@@ -83,7 +89,16 @@ permalink: /blog.html
                     {% assign sorted_pages = site.pages | sort: "date_created" | reverse %}
                     {% for post in sorted_pages %}
                         {% if post.path contains 'blog/' and post.name != 'blog.html' and post.name != 'index.html' %}
-                        <div class="project-card blog-item" data-category="{{ post.category | downcase | escape | default: 'none' }}">
+                        
+                        {% capture cat_data %}
+                            {% if post.category.first %}
+                                {{ post.category | join: ',' | downcase | escape }}
+                            {% else %}
+                                {{ post.category | downcase | escape | default: 'none' }}
+                            {% endif %}
+                        {% endcapture %}
+
+                        <div class="project-card blog-item" data-category="{{ cat_data | strip }}">
                             <div class="project-content">
                                 <h3 class="project-title">
                                     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | default: post.name | replace: ".md", "" | replace: ".html", "" }}</a>
@@ -93,7 +108,11 @@ permalink: /blog.html
                                     <strong>Created:</strong> {{ post.date_created | slice: 0, 10 }}<br>
                                     {% endif %}
                                     {% if post.category %}
-                                    <strong>Category:</strong> {{ post.category }}<br>
+                                        {% if post.category.first %}
+                                            <strong>Categories:</strong> {{ post.category | join: ", " }}<br>
+                                        {% else %}
+                                            <strong>Category:</strong> {{ post.category }}<br>
+                                        {% endif %}
                                     {% endif %}
                                     {% if post.tags %}
                                     <strong>Tags:</strong> {{ post.tags }}
@@ -122,10 +141,15 @@ permalink: /blog.html
                     // Filter items
                     const filter = tag.getAttribute('data-filter');
                     items.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        if (filter === 'all') {
                             item.style.display = 'flex';
                         } else {
-                            item.style.display = 'none';
+                            const itemCategories = item.getAttribute('data-category').split(',');
+                            if (itemCategories.includes(filter)) {
+                                item.style.display = 'flex';
+                            } else {
+                                item.style.display = 'none';
+                            }
                         }
                     });
                 });

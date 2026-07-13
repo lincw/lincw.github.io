@@ -1,8 +1,8 @@
 ---
 date_created: 2026-07-13T10:44:49+0200
-date_modified: 2026-07-13T11:25:14+0200
+date_modified: 2026-07-13T11:37:30+0200
 type: article 
-category: #git #latex
+category: ["git", "latex"]
 tags: #presentation #git #beamer #latex #inkscape
 ---
 
