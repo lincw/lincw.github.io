@@ -11,15 +11,18 @@
     <div class="layout-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <h1>Chung-Wen Lin</h1>
-            <h2>Bioinformatics</h2>
+            <div class="sidebar-header" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-bottom: 2rem;">
+                <div>
+                    <h1 style="margin-bottom: 0.2rem;">Chung-Wen Lin</h1>
+                    <h2 style="margin-bottom: 0;">Bioinformatics</h2>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme" style="margin-bottom: 0;">
+                    <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM3 11h2a1 1 0 110 2H3a1 1 0 110-2zm16 0h2a1 1 0 110 2h-2a1 1 0 110-2zM5.64 4.22l1.42 1.42A1 1 0 115.64 7.05L4.22 5.64a1 1 0 111.42-1.42zm12.02 12.02l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42zM18.36 4.22a1 1 0 111.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42l1.42-1.42zM6.22 16.24l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42z"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+            </div>
 
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">
-                <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM3 11h2a1 1 0 110 2H3a1 1 0 110-2zm16 0h2a1 1 0 110 2h-2a1 1 0 110-2zM5.64 4.22l1.42 1.42A1 1 0 115.64 7.05L4.22 5.64a1 1 0 111.42-1.42zm12.02 12.02l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42zM18.36 4.22a1 1 0 111.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42l1.42-1.42zM6.22 16.24l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42z"/></svg>
-                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-            </button>
-
-            <nav class="sidebar-nav">
+            <nav class="sidebar-nav" style="margin-top: 0;">
                 <a href="index.html" class="nav-link">Projects & Products</a>
                 <a href="profile.html" class="nav-link">Profile & CV</a>
                 <a href="publications.html" class="nav-link" style="color: var(--accent-color); background-color: rgba(210, 100, 40, 0.05);">Publications</a>

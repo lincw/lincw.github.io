@@ -9,20 +9,46 @@ permalink: /blog.html
     <title>Blog - Chung-Wen Lin</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
     <script src="{{ site.baseurl }}/theme.js"></script>
+    <style>
+        .category-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .category-tag {
+            background-color: var(--surface-color);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .category-tag:hover, .category-tag.active {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+    </style>
 </head>
 <body>
     <div class="layout-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <h1>Chung-Wen Lin</h1>
-            <h2>Bioinformatics</h2>
+            <div class="sidebar-header" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-bottom: 2rem;">
+                <div>
+                    <h1 style="margin-bottom: 0.2rem;">Chung-Wen Lin</h1>
+                    <h2 style="margin-bottom: 0;">Bioinformatics</h2>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme" style="margin-bottom: 0;">
+                    <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM3 11h2a1 1 0 110 2H3a1 1 0 110-2zm16 0h2a1 1 0 110 2h-2a1 1 0 110-2zM5.64 4.22l1.42 1.42A1 1 0 115.64 7.05L4.22 5.64a1 1 0 111.42-1.42zm12.02 12.02l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42zM18.36 4.22a1 1 0 111.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42l1.42-1.42zM6.22 16.24l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42z"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+            </div>
 
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">
-                <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM3 11h2a1 1 0 110 2H3a1 1 0 110-2zm16 0h2a1 1 0 110 2h-2a1 1 0 110-2zM5.64 4.22l1.42 1.42A1 1 0 115.64 7.05L4.22 5.64a1 1 0 111.42-1.42zm12.02 12.02l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42zM18.36 4.22a1 1 0 111.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42l1.42-1.42zM6.22 16.24l1.42 1.42a1 1 0 11-1.42 1.42l-1.42-1.42a1 1 0 111.42-1.42z"/></svg>
-                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-            </button>
-
-            <nav class="sidebar-nav">
+            <nav class="sidebar-nav" style="margin-top: 0;">
                 <a href="{{ site.baseurl }}/index.html" class="nav-link">Projects & Products</a>
                 <a href="{{ site.baseurl }}/profile.html" class="nav-link">Profile & CV</a>
                 <a href="{{ site.baseurl }}/publications.html" class="nav-link">Publications</a>
@@ -35,18 +61,39 @@ permalink: /blog.html
         <main class="main-content">
             <section id="blog-posts">
                 <h2 class="section-title">Blog</h2>
-                <div class="blog-list">
+
+                <!-- Category Cloud -->
+                <div class="category-cloud" id="category-cloud">
+                    <button class="category-tag active" data-filter="all">All</button>
+                    {% assign raw_categories = "" %}
+                    {% for post in site.pages %}
+                        {% if post.path contains 'blog/' and post.category %}
+                            {% assign raw_categories = raw_categories | append: post.category | append: "|" %}
+                        {% endif %}
+                    {% endfor %}
+                    {% assign categories = raw_categories | split: "|" | compact | uniq | sort %}
+                    {% for cat in categories %}
+                        {% if cat != "" %}
+                        <button class="category-tag" data-filter="{{ cat | downcase | escape }}">{{ cat }}</button>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="blog-list" id="blog-list">
                     {% assign sorted_pages = site.pages | sort: "date_created" | reverse %}
                     {% for post in sorted_pages %}
                         {% if post.path contains 'blog/' and post.name != 'blog.html' and post.name != 'index.html' %}
-                        <div class="project-card">
+                        <div class="project-card blog-item" data-category="{{ post.category | downcase | escape | default: 'none' }}">
                             <div class="project-content">
                                 <h3 class="project-title">
                                     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | default: post.name | replace: ".md", "" | replace: ".html", "" }}</a>
                                 </h3>
                                 <p class="project-desc">
                                     {% if post.date_created %}
-                                    <strong>Created:</strong> {{ post.date_created }}<br>
+                                    <strong>Created:</strong> {{ post.date_created | slice: 0, 10 }}<br>
+                                    {% endif %}
+                                    {% if post.category %}
+                                    <strong>Category:</strong> {{ post.category }}<br>
                                     {% endif %}
                                     {% if post.tags %}
                                     <strong>Tags:</strong> {{ post.tags }}
@@ -60,5 +107,30 @@ permalink: /blog.html
             </section>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tags = document.querySelectorAll('.category-tag');
+            const items = document.querySelectorAll('.blog-item');
+
+            tags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    // Update active class
+                    tags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+
+                    // Filter items
+                    const filter = tag.getAttribute('data-filter');
+                    items.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
