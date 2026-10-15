@@ -6,6 +6,7 @@ permalink: /blog.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="{{ site.baseurl }}/assets/site-avatar.jpg">
     <title>Blog - Chung-Wen Lin</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
     <script src="{{ site.baseurl }}/theme.js"></script>
@@ -37,6 +38,9 @@ permalink: /blog.html
     <div class="layout-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar">
+            <a class="profile-img-container" href="{{ site.baseurl }}/index.html" aria-label="Chung-Wen Lin — home">
+                <img src="{{ site.baseurl }}/assets/site-avatar.jpg" alt="Bioinformatics avatar" class="profile-img" width="120" height="120">
+            </a>
             <div class="sidebar-header" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-bottom: 2rem;">
                 <div>
                     <h1 style="margin-bottom: 0.2rem;">Chung-Wen Lin</h1>
@@ -52,7 +56,8 @@ permalink: /blog.html
                 <a href="{{ site.baseurl }}/index.html" class="nav-link">Projects & Products</a>
                 <a href="{{ site.baseurl }}/profile.html" class="nav-link">Profile & CV</a>
                 <a href="{{ site.baseurl }}/publications.html" class="nav-link">Publications</a>
-                <a href="{{ site.baseurl }}/blog.html" class="nav-link" style="color: var(--accent-color); background-color: rgba(210, 100, 40, 0.05);">Blog</a>
+                <a href="{{ site.baseurl }}/videos.html" class="nav-link">Research Explainers</a>
+                <a href="{{ site.baseurl }}/blog.html" class="nav-link" aria-current="page">Blog</a>
                 <a href="{{ site.baseurl }}/contact.html" class="nav-link">Contact</a>
             </nav>
         </aside>

@@ -10,3 +10,12 @@ Thumbs.db
 # IDE/Editor files
 .vscode/
 .idea/
+
+# Local Jekyll builds and dependencies
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+Gemfile.lock
+vendor/bundle/
